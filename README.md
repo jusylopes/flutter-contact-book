@@ -1,16 +1,25 @@
-# flutter_contact_book
+# ☎️ Contact Book
+## Sobre o projeto
 
-A new Flutter project.
+O aplicativo realiza operações CRUD (Create, Read, Update, Delete) para contatos, armazenando os dados com o serviço [Back4App](https://www.back4app.com). 
+Isso permite aos usuários criar novos registros de contatos, atualizar informações existentes e excluir entradas quando necessário.
 
-## Getting Started
+## Screenshots
+<p>
+<img src="screenshots/Screenshot_1.png" width="19%">
+  <img src="screenshots/Screenshot_2.png" width="19%"> 
+  <img src="screenshots/contact_book.gif" width="19%">
+</p>
 
-This project is a starting point for a Flutter application.
+### Tecnologias utilizadas
 
-A few resources to get you started if this is your first Flutter project:
+* Flutter
+* Bloc
+* Back4App
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Desenvolvedora
+
+<a href="https://www.linkedin.com/in/jusy-lopes/" > <img align="center" src="https://img.shields.io/badge/- jusylopes-05122A?style=flat&logo=linkedin" alt="linkedin"/>
+
+  
