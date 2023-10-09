@@ -26,7 +26,7 @@ class SearchContactBloc extends Bloc<SearchContactEvent, SearchContactState> {
       emit(state.copyWith(status: BlocStatus.success, contacts: contactsList));
     } catch (error) {
       emit(state.copyWith(
-          status: BlocStatus.error, errorMessage: 'Error loading data...'));
+          status: BlocStatus.error, errorMessage: error.toString()));
     }
   }
 }
