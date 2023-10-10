@@ -7,7 +7,8 @@ import 'package:flutter_contact_book/repositories/contact_repository.dart';
 part 'register_contact_event.dart';
 part 'register_contact_state.dart';
 
-class RegisterContactBloc extends Bloc<RegisterContactEvent, RegisterContactState> {
+class RegisterContactBloc
+    extends Bloc<RegisterContactEvent, RegisterContactState> {
   RegisterContactBloc({required this.repository})
       : super(const RegisterContactState(status: BlocStatus.initial)) {
     on<GetAllContacts>(_onGetAllContact);
@@ -25,11 +26,11 @@ class RegisterContactBloc extends Bloc<RegisterContactEvent, RegisterContactStat
     try {
       final List<ContactModel> allContacts =
           await repository.fetchAllContacts();
+
       emit(state.copyWith(status: BlocStatus.success, data: allContacts));
     } catch (error) {
       emit(state.copyWith(
-          status: BlocStatus.error,
-          errorMessage: 'Error loading data Back4App...'));
+          status: BlocStatus.error, errorMessage: error.toString()));
     }
   }
 
@@ -56,9 +57,9 @@ class RegisterContactBloc extends Bloc<RegisterContactEvent, RegisterContactStat
 
     try {
       await repository.updateContact(event.updatedContact);
-      add(const GetAllContacts());
-
       emit(state.copyWith(status: BlocStatus.success));
+      add(const GetAllContacts());
+      
     } catch (error) {
       emit(state.copyWith(
         status: BlocStatus.error,
