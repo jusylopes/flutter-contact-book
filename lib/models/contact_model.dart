@@ -6,6 +6,7 @@ class ContactModel {
   final String phoneNumber;
   final String? imgUrl;
   final String? email;
+  
   ContactModel({
     this.objectId,
     required this.name,
@@ -50,11 +51,11 @@ class ContactModel {
 
   factory ContactModel.fromMap(Map<String, dynamic> map) {
     return ContactModel(
-      objectId: map['objectId'],
+      objectId: map['objectId'] ?? '',
       name: map['name'] ?? '',
       phoneNumber: map['phoneNumber'] ?? '',
-      imgUrl: map['imgUrl'],
-      email: map['email'],
+      imgUrl: map['imgUrl'] ?? '',
+      email: map['email'] ?? '',
     );
   }
 
