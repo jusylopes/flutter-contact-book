@@ -12,11 +12,9 @@ class ContactRepository {
           'Content-Type': 'application/json',
         };
 
-  static const String _baseUrlBack4app =
-      'https://parseapi.back4app.com/classes/contact';
-  static const String _applicationId =
-      'IWJlH52mAMcmk9AQMUV9d1JvWCkVJfASpNtSjQ7G';
-  static const String _apiKey = '3Y5XhlOTqDGekIVQlRYHewuhzK2fOYfhOr3B1NGe';
+  static const String _baseUrlBack4app = '';
+  static const String _applicationId = '';
+  static const String _apiKey = '';
 
   Future<List<ContactModel>> fetchAllContacts() async {
     try {
