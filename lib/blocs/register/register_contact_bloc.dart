@@ -25,7 +25,7 @@ class RegisterContactBloc
 
     try {
       final List<ContactModel> allContacts =
-          await repository.fetchAllContacts();
+          await repository.fetchAllContactsSorted();
 
       emit(state.copyWith(status: BlocStatus.success, data: allContacts));
     } catch (error) {
@@ -41,6 +41,7 @@ class RegisterContactBloc
     try {
       await repository.addContact(event.newContact);
       final updatedCeps = await repository.fetchAllContacts();
+      add(const GetAllContacts());
 
       emit(state.copyWith(status: BlocStatus.success, data: updatedCeps));
     } catch (error) {
@@ -57,9 +58,9 @@ class RegisterContactBloc
 
     try {
       await repository.updateContact(event.updatedContact);
-      emit(state.copyWith(status: BlocStatus.success));
+      emit(state.copyWith(status: BlocStatus.success, ));
       add(const GetAllContacts());
-      
+
     } catch (error) {
       emit(state.copyWith(
         status: BlocStatus.error,
@@ -82,6 +83,8 @@ class RegisterContactBloc
         status: BlocStatus.success,
         data: updatedContacts,
       ));
+
+      add(const GetAllContacts());
     } catch (error) {
       emit(state.copyWith(
         status: BlocStatus.error,
