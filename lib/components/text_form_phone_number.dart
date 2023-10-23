@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:flutter_contact_book/utils/phone_input_formatter.dart';
 
 class TextFormPhoneNumber extends StatelessWidget {
   const TextFormPhoneNumber({
@@ -25,12 +25,7 @@ class TextFormPhoneNumber extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelText: 'Phone Number',
         ),
-        inputFormatters: [
-          MaskTextInputFormatter(
-            mask: '(##) #####-####',
-            filter: {"#": RegExp(r'[0-9]')},
-          ),
-        ],
+        inputFormatters: [PhoneInputFormatter()],
         validator: (value) {
           if (value == null || value.isEmpty || value.length <= 9) {
             return 'Invalid format';
